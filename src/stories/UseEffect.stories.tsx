@@ -30,3 +30,22 @@ export const SimpleExample = () => {
     </Wrapper>
   )
 }
+
+export const TimeoutExample = () => {
+  const [time, setTime] = useState("")
+
+  useEffect(() => {
+    setInterval(() => {
+      setTime(new Date().toLocaleTimeString())
+      document.title = new Date().toLocaleTimeString()
+    }, 1000)
+  }, [])
+
+  return (
+    <Wrapper>
+      <h3>{time}</h3>
+      {/*<button onClick={() => setCounter(prevState => prevState + 1)}>+</button>*/}
+      {/*<h3>{counter}</h3>*/}
+    </Wrapper>
+  )
+}
